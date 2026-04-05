@@ -26,7 +26,7 @@ This project implements a **Retrieval-Augmented Generation (RAG)** pipeline on t
 3. Place the PDF file at:
 
    ```
-   data/VM_new2019.pdf
+   data/your_file.pdf
    ```
 
 4. Run the application:
