@@ -1,5 +1,3 @@
-Başa düşdüm, bu artıq sadəcə bir vergi köməkçisi deyil, yüklənən istənilən PDF sənədini analiz edə bilən daha universal bir **RAG** sistemidir. Bu dinamik xüsusiyyəti ön plana çıxarmaq üçün `README.md` faylını aşağıdakı şəkildə yeniləyə bilərsiniz:
-
 ---
 
 # 🤖 Dynamic PDF RAG Assistant - Multilingual Analysis
