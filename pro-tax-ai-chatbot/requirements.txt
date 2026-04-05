@@ -1,6 +1,7 @@
+python-dotenv
+numpy<2.0
 pdfplumber
-sentence-transformers
 faiss-cpu
-numpy
-streamlit
+sentence-transformers
 groq
+streamlit
