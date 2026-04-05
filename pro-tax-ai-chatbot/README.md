@@ -1,44 +1,50 @@
-# ⚖️ Tax Code of the Republic of Azerbaijan - RAG Assistant
+Başa düşdüm, bu artıq sadəcə bir vergi köməkçisi deyil, yüklənən istənilən PDF sənədini analiz edə bilən daha universal bir **RAG** sistemidir. Bu dinamik xüsusiyyəti ön plana çıxarmaq üçün `README.md` faylını aşağıdakı şəkildə yeniləyə bilərsiniz:
 
-This project implements a sophisticated **Retrieval-Augmented Generation (RAG)** pipeline applied to the official Tax Code PDF of the Republic of Azerbaijan. It combines semantic search with high-speed LLM generation to provide accurate legal answers.
+---
+
+# 🤖 Dynamic PDF RAG Assistant - Multilingual Analysis
+
+This project implements a flexible and high-performance **Retrieval-Augmented Generation (RAG)** pipeline. Unlike static systems, this assistant dynamically processes provided PDF documents (such as the Azerbaijan National AI Strategy or legal codes) to provide context-aware, accurate answers.
 
 **App Link:** [https://pro-tax-ai-chatbot.streamlit.app/](https://pro-tax-ai-chatbot.streamlit.app/)
 
-## 🚀 Features
+## 🚀 Key Features
 
-* **Advanced Data Ingestion:** Extracts and cleans text from complex legal PDF documents using `pdfplumber`.
-* **Hybrid Retrieval:** Combines exact article lookup with semantic vector search using **FAISS**.
-* **Reranking Pipeline:** Utilizes a **Cross-Encoder** (`ms-marco-MiniLM-L-6-v2`) to prioritize the most relevant legal clauses before generation.
-* **Multilingual Embeddings:** Powered by `paraphrase-multilingual-MiniLM-L12-v2` for high accuracy in Azerbaijani technical text.
-* **High-Performance LLM:** Integrates **Llama 3.3 70B** via the Groq API for near-instant, context-aware responses.
-* **Interactive UI:** A clean, user-friendly chat interface built with **Streamlit**.
+* **Dynamic Content Parsing:** Automatically extracts, cleans, and structures text from any uploaded or provided PDF document.
+* **Intelligent Chunking:** Implements semantic segmenting (500-character blocks with overlap) to ensure no context is lost between sections.
+* **Multilingual Vector Search:** Powered by `FAISS` and `sentence-transformers`, enabling the system to understand and retrieve information in **Azerbaijani**, English, and 50+ other languages.
+* **Precision Reranking:** Uses a **Cross-Encoder** (`ms-marco-MiniLM-L-6-v2`) to re-evaluate the top 10 search results, ensuring the LLM receives only the most relevant context.
+* **Llama 3.3 70B Integration:** Connects via **Groq API** for ultra-fast response generation while strictly adhering to the provided document's context.
+* **User-Centric UI:** A streamlined **Streamlit** interface featuring an interactive chat environment.
 
-## 🛠️ Installation & Local Setup
+## 🛠️ Technical Stack
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/rafiveyisov/MyLLM.git
-   cd MyLLM/pro-tax-ai-chatbot
-   ```
+* **Core Logic:** Python
+* **Vector Engine:** FAISS (Facebook AI Similarity Search)
+* **Embeddings:** paraphrase-multilingual-MiniLM-L12-v2
+* **Inference:** Groq Cloud API
+* **Front-end:** Streamlit
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 📋 Installation & Setup
 
-3. **Environment Variables:**
-   Create a `.env` file in the `pro-tax-ai-chatbot` folder:
-   ```text
-   GROQ_API_KEY=your_actual_api_key_here
-   ```
+1.  **Clone the Repo:**
+    ```bash
+    git clone https://github.com/rafiveyisov/MyLLM.git
+    cd MyLLM/pro-tax-ai-chatbot
+    ```
 
-4. **Data Placement:**
-   Ensure your Tax Code PDF is placed within the `pro-tax-ai-chatbot/` directory as specified in the source code.
+2.  **Install Requirements:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-5. **Run the application:**
-   ```bash
-   streamlit run app.py
-   ```
+3.  **Configure API Keys:**
+    Add your `GROQ_API_KEY` to your system environment variables or a `.env` file.
+
+4.  **Launch:**
+    ```bash
+    streamlit run app.py
+    ```
 
 ## 🌐 Deployment Note
-When deploying to **Streamlit Cloud**, ensure that your `GROQ_API_KEY` is added to the **Secrets** management tool in the Streamlit dashboard to maintain security.
+For **Streamlit Cloud** deployment, remember to add your `GROQ_API_KEY` in the **Secrets** section of the Streamlit dashboard to ensure the backend can communicate with the Groq API.
