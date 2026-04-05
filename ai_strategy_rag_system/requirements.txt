@@ -1,0 +1,7 @@
+numpy<2.0
+pdfplumber
+faiss-cpu
+sentence-transformers
+groq
+ipywidgets
+ipython
